@@ -19,13 +19,25 @@ pip install -r requirements.txt
 # Как запустить
 
 ```python3
-python main.py
+python server.py
 ```
+
+У вас запустится сервер на http://127.0.0.1:8080
+
+# Как работать
+
+Вы можете узнавать о степени желтушности статьи с сайта Inosmi.ru по ссылке сверху с дополнительным параметром urls
+Например:
+```python3
+http://127.0.0.1:8080/?urls=https://inosmi.ru/20230510/karlson-262806210.html
+http://127.0.0.1:8080/?urls=https://inosmi.ru/20230510/karlson-262806210.html,https://inosmi.ru/20230510/sdelka-262821054.html
+```
+
 
 # Как запустить тесты
 
 Для тестирования используется [pytest](https://docs.pytest.org/en/latest/), тестами покрыты фрагменты кода сложные в отладке: text_tools.py и адаптеры. Команды для запуска тестов:
-  
+
 ```
 python -m pytest adapters/inosmi_ru.py
 ```
@@ -33,7 +45,6 @@ python -m pytest adapters/inosmi_ru.py
 ```
 python -m pytest text_tools.py
 ```
-
-# Цели проекта
-
-Код написан в учебных целях. Это урок из курса по веб-разработке — [Девман](https://dvmn.org).
+```
+python -m pytest process_article_tests.py
+```
